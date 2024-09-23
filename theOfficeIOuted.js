@@ -1,32 +1,16 @@
 //https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1/solutions/javascript
 
-function scoreboard(string) {
-  const numberWords = {
-    nil: 0,
-    one: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9,
-  };
+function outed(meet, boss) {
+  let totalHappiness = 0;
+  let numberOfPeople = 0;
 
-  let words = string.toLowerCase().split(" ");
-
-  let result = [];
-
-  for (let word of words) {
-    if (numberWords.hasOwnProperty(word)) {
-      result.push(numberWords[word]);
-    }
-
-    if (result.length === 2) {
-      break;
-    }
+  for (let member in meet) {
+    totalHappiness += meet[member];
+    numberOfPeople += 1;
   }
 
-  return result;
+  totalHappiness += meet[boss];
+  let averageHappiness = totalHappiness / numberOfPeople;
+
+  return averageHappiness <= 5 ? "Get Out Now!" : "Nice Work Champ!";
 }
