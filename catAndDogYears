@@ -1,0 +1,25 @@
+//www.codewars.com/kata/5a6d3bd238f80014a2000187/solutions/javascript
+
+https: var ownedCatAndDog = function (catYears, dogYears) {
+  // Your code here!
+
+  let humanCatYears;
+  if (catYears < 15) {
+    humanCatYears = 0;
+  } else if (catYears < 24) {
+    humanCatYears = 1;
+  } else {
+    humanCatYears = 2 + Math.floor((catYears - 24) / 4);
+  }
+
+  let humanDogYears;
+  if (dogYears < 15) {
+    humanDogYears = 0;
+  } else if (dogYears < 24) {
+    humanDogYears = 1;
+  } else {
+    humanDogYears = 2 + Math.floor((dogYears - 24) / 5);
+  }
+
+  return [humanCatYears, humanDogYears];
+};
